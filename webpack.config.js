@@ -24,6 +24,7 @@ module.exports = {
       './client/core/index.js',
       './node_modules/foundation-sites/dist/js/foundation.min.js'
     ],
+    'play': './client/play/index.js',
     'app': './client/app/index.js',
     'cms': './client/cms/index.js',
   },
