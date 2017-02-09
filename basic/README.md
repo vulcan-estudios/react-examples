@@ -1,4 +1,4 @@
-# Playground
+# Básico
 
 ![Screenshot](./screenshot.png)
 
