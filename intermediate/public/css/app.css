@@ -1,0 +1,8 @@
+.user {
+  padding: 0.5rem;
+  color: #444;
+  transition: all 250ms ease-out;
+}
+.user img {
+  margin-right: 0.5rem;
+}
