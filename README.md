@@ -4,7 +4,8 @@
 
 Serie de ejemplos para aprender [React](http://facebook.github.io/react), [Redux](http://redux.js.org) y todos sus amigos.
 
-- [Playground](./play)
+- [Playground](./play) - Espacio para practicar
+- [Básico](./basic) - Fundamentos de React
 
 ## License
 
