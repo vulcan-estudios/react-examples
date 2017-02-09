@@ -1,0 +1,25 @@
+body {
+  margin: 2rem;
+  font-family: sans-serif;
+}
+
+.main {
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.animal {
+  overflow: hidden;
+  display: block;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  line-height: 33px;
+  font-size: 1.5rem;
+}
+.animal img {
+  display: block;
+  float: left;
+  margin-right: 0.5rem;
+  height: 100px;
+}
