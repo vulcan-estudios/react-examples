@@ -1,14 +1,12 @@
 {
   "name": "vulcan-react-examples",
   "version": "1.0.0",
-  "description": "Vulcan Estudios React Examples",
   "private": true,
   "scripts": {
-    "start": "NODE_PATH=./ node server",
+    "start": "node server",
     "build": "webpack"
   },
   "dependencies": {
-    "axios": "^0.14.0",
     "babel-core": "^6.9.1",
     "babel-eslint": "^7.1.0",
     "babel-loader": "^6.2.4",
@@ -19,18 +17,8 @@
     "eslint": "^3.8.1",
     "eslint-plugin-react": "^6.4.1",
     "express": "^4.14.0",
-    "foundation-sites": "^6.3.0",
-    "i18next": "^3.4.1",
-    "immutable": "^3.8.1",
-    "jquery": "^2.2.4",
-    "lodash": "^4.15.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
-    "react-foundation": "^0.7.0",
-    "react-redux": "^4.4.6",
-    "react-router": "^2.8.1",
-    "react-router-redux": "^4.0.5",
-    "redux": "^3.6.0",
     "webpack": "^1.13.1"
   }
 }

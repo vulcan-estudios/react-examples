@@ -35,10 +35,3 @@ nbproject
 Thumbs.db
 dump.rdb
 npm-debug.log
-
-##
-## BASE
-##
-
-public/js/*
-!public/js/.gitkeep
