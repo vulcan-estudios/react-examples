@@ -1,3 +1,9 @@
+// Esto es un componente sin estado, o stateless component de React. Es
+// recomendado que siempre se traten de crear componentes de esta manera.
+
+// El comportamiento de estos componentes sólo debe depender de sus propiedades
+// recibidas.
+
 import React, { PropTypes } from 'react';
 
 function Title (props = {}) {

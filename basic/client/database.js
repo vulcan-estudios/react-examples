@@ -1,3 +1,5 @@
+// Mock de datos para iniciarlizar.
+
 export default {
   animals: [
     {
