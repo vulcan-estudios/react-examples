@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   entry: {
     'app': './client/index.js',
@@ -7,7 +9,7 @@ module.exports = {
     filename: '[name].js'
   },
   resolve: {
-    fallback: process.cwd()
+    fallback: path.resolve(process.cwd())
   },
   module: {
     loaders: [{

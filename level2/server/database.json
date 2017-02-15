@@ -1,0 +1,23 @@
+{
+  "animes": [{
+    "id": 1,
+    "name": "Gosick",
+    "image": "/img/gosick.jpg",
+    "url": "http://gosick.jp"
+  }, {
+    "id": 2,
+    "name": "Spice & Wolf",
+    "image": "/img/spice-and-wolf.jpg",
+    "url": "http://spicy-wolf.com"
+  }, {
+    "id": 3,
+    "name": "Mahouka Koukou No Rettousei",
+    "image": "/img/mahouka.jpg",
+    "url": "http://mahouka.jp"
+  }, {
+    "id": 4,
+    "name": "Magi",
+    "image": "/img/magi.jpg",
+    "url": "http://www.magi-usa.com"
+  }]
+}
