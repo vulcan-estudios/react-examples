@@ -1,8 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from 'client/containers/App';
+import { render } from 'react-dom';
+import store from './store';
+import { Provider } from 'react-redux';
+import App from './containers/App';
 
-const app = <App />;
+const app = (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
 const root = document.querySelector('#app');
 
-ReactDOM.render(app, root);
+render(app, root);

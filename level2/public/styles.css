@@ -1,20 +1,16 @@
-.main {
-  display: block;
-  margin: 0 auto;
-  max-width: 600px;
+/* Header */
+
+.header {
+  margin-bottom: 1rem;
+  color: #fff;
+  background-color: #303F9F;
 }
 
-.anime {
-  overflow: hidden;
-  display: block;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  line-height: 33px;
+/* Value */
+
+.value {
+  display: inline-block;
+  padding: 0 1rem;
   font-size: 1.5rem;
-}
-.anime img {
-  display: block;
-  float: left;
-  margin-right: 0.5rem;
-  height: 100px;
+  line-height: 2.5rem;
 }

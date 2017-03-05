@@ -1,4 +1,4 @@
-# Básico
+# Level 2: React - Redux
 
 ![Screenshot](./screenshot.png)
 
@@ -20,7 +20,7 @@ $ npm run start
 $ npm run build
 ```
 
-## Builder with watcher
+## Build with watcher
 
 ```bash
 $ npm run watch

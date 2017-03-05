@@ -1,61 +1,45 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
-import AnimeCreate from 'client/components/AnimeCreate';
-import Anime from 'client/components/Anime';
+import Count from '../components/Count';
+import Counter from '../components/Counter';
+import { connect } from 'react-redux';
+import { add, subtract } from '../actions-creators';
 
-class AppContainer extends Component {
+function mapStateToProps (state) {
+  return {
+    value: state.value
+  };
+}
+
+function mapDispatchToProps (dispatch) {
+  return {
+    handleAdd: (toAdd) => dispatch(add(toAdd)),
+    handleSubtract: (toSubtract) => dispatch(subtract(toSubtract)),
+  };
+}
+
+class App extends Component {
 
   constructor () {
-
     super(...arguments);
-
-    this.state = {
-      animes: []
-    };
-
-    this.handleCreate = this.handleCreate.bind(this);
-  }
-
-  // Este evento de ciclo de componente es llamado cuando éste se crea.
-  // No se vuelve a llamar cuando se actualiza.
-  componentDidMount () {
-    this.sync();
   }
 
   render () {
-
-    const { animes } = this.state;
-    const animesElements = animes.map(anime => (
-      <Anime key={anime.id} {...anime} />
-    ));
-
+    const { value, handleAdd, handleSubtract } = this.props;
     return (
-      <main className='main'>
-        <header className='row column'>
-          <h1>Lista de animes</h1>
+      <div>
+        <header className='header'>
+          <div className='row column'>
+            <h1>Counter</h1>
+          </div>
         </header>
-        <AnimeCreate onCreate={this.handleCreate} />
         <main className='row column'>
-          { animesElements.length ? animesElements : <i>No hay animes.</i> }
+          <Count onCount={handleAdd} toCount={10} />
+          <Counter value={value} />
+          <Count onCount={handleSubtract} toCount={5} />
         </main>
-      </main>
+      </div>
     );
-  }
-
-  handleCreate (newItem) {
-    $.post('/api/animes', newItem).then(anime => {
-      const newAnimes = [ ...this.state.animes, anime ];
-      this.setState({
-        animes: newAnimes
-      });
-    });
-  }
-
-  sync () {
-    $.get('/api/animes').then(animes => {
-      this.setState({ animes });
-    });
   }
 }
 
-export default AppContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -16,6 +16,10 @@ Entra al [espacio para prácticar](./play) para aprender.
 
 [<img src="./level1/screenshot.png" height="300">](./level1)
 
+### Level 2: [React - Redux](./level2)
+
+[<img src="./level2/screenshot.png" height="300">](./level2)
+
 ## License
 
 [MIT](./LICENSE)
