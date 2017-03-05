@@ -18,7 +18,11 @@ Entra al [espacio para prácticar](./play) para aprender.
 
 ### Level 2: [React - Redux](./level2)
 
-[<img src="./level2/screenshot.png" height="300">](./level2)
+[<img src="./level2/screenshot.png" height="120">](./level2)
+
+### Level 3: [React Router](./level3)
+
+[<img src="./level3/screenshot.png" height="300">](./level3)
 
 ## License
 
