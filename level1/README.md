@@ -1,4 +1,4 @@
-# Intermedio
+# Level 1: Aplicación sencilla
 
 ![Screenshot](./screenshot.png)
 

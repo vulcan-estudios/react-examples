@@ -11,8 +11,10 @@ function Title (props = {}) {
   const { className, children } = props;
 
   return (
-    <header className={className}>
-      <h1>{children}</h1>
+    <header className={`header ${className}`}>
+      <div className='row column'>
+        <h1>{children}</h1>
+      </div>
     </header>
   );
 }

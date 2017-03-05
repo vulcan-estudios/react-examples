@@ -1,13 +1,12 @@
-body {
-  margin: 2rem;
-  font-family: sans-serif;
+/* Header */
+
+.header {
+  margin-bottom: 1rem;
+  color: #fff;
+  background-color: #7B1FA2;
 }
 
-.main {
-  display: block;
-  margin: 0 auto;
-  max-width: 600px;
-}
+/* Animal */
 
 .animal {
   overflow: hidden;

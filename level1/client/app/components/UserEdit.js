@@ -7,6 +7,13 @@ class UserEdit extends Component {
 
   constructor () {
     super(...arguments);
+
+    this.state = {
+      name: this.props.name,
+      photo: this.props.photo,
+    };
+
+    this.onChange = this.onChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -17,36 +24,48 @@ class UserEdit extends Component {
     const buttonText = isAdd ? 'Agregar' : 'Actualizar';
 
     return (
-      <Row className={cls} data-id={id} {...rest}>
-        <Column small={6} medium={5}>
-          <input
-            ref={r => (this.inputName = r)}
-            type='text'
-            placeholder='Nombre'
-            defaultValue={name}
-          />
-        </Column>
-        <Column small={6} medium={5}>
-          <input
-            ref={r => (this.inputPhoto = r)}
-            type='text'
-            placeholder='URL de fotografía'
-            defaultValue={photo}
-          />
-        </Column>
-        <Column small={12} medium={2}>
-          <Button onClick={this.handleChange}>{buttonText}</Button>
-        </Column>
-      </Row>
+      <div className={cls} data-id={id} {...rest}>
+        <Row>
+          <Column small={6} medium={5}>
+            <input
+              ref={r => (this.inputName = r)}
+              type='text'
+              placeholder='Nombre'
+              value={this.state.name}
+              onChange={this.onChange}
+            />
+          </Column>
+          <Column small={6} medium={5}>
+            <input
+              ref={r => (this.inputPhoto = r)}
+              type='text'
+              placeholder='URL de fotografía'
+              value={this.state.photo}
+              onChange={this.onChange}
+            />
+          </Column>
+          <Column small={12} medium={2}>
+            <Button onClick={this.handleChange}>{buttonText}</Button>
+          </Column>
+        </Row>
+        <Row isColumn={true}>
+          { this.state.photo && <img src={this.state.photo} alt={this.state.name} /> }
+        </Row>
+      </div>
     );
+  }
+
+  onChange () {
+    const name = this.inputName.value;
+    const photo = this.inputPhoto.value;
+    this.setState({ name, photo });
   }
 
   handleChange (event) {
 
     event.preventDefault();
 
-    const name = this.inputName.value;
-    const photo = this.inputPhoto.value;
+    const { name, photo } = this.state;
 
     if (!name || !photo) return;
 
@@ -55,8 +74,10 @@ class UserEdit extends Component {
 
     this.props.onChange(newUser);
 
-    this.inputName.value = '';
-    this.inputPhoto.value = '';
+    this.setState({
+      name: '',
+      photo: '',
+    });
   }
 }
 
@@ -69,6 +90,11 @@ UserEdit.propTypes = {
   photo: PropTypes.string,
   name: PropTypes.string,
   isAdd: PropTypes.bool
+};
+
+UserEdit.defaultProps = {
+  name: '',
+  photo: ''
 };
 
 export default UserEdit;

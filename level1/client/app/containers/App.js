@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import database from 'client/app/database';
+import data from 'client/app/data';
 import ListContainer from 'client/app/containers/List';
 import EditContainer from 'client/app/containers/Edit';
 
@@ -11,41 +11,41 @@ class AppContainer extends Component {
 
     this.state = {
       editingUserId: '',
-      users: database.users
+      users: data.users
     };
 
     this.handleAdd = this.handleAdd.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
     this.handleEdition = this.handleEdition.bind(this);
+    this.handleRemove = this.handleRemove.bind(this);
   }
 
   render () {
 
     const { editingUserId, users } = this.state;
 
+    if (editingUserId) {
+      return (
+        <EditContainer
+          users={users}
+          userId={editingUserId}
+          handleEdit={this.handleEdit}
+        />
+      );
+    }
+
     return (
-      <main>
-        {
-          editingUserId ?
-          <EditContainer
-            users={users}
-            userId={editingUserId}
-            handleEdit={this.handleEdit}
-          /> :
-          <ListContainer
-            users={users}
-            handleEdition={this.handleEdition}
-            handleAdd={this.handleAdd}
-          />
-        }
-      </main>
+      <ListContainer
+        users={users}
+        handleEdition={this.handleEdition}
+        handleAdd={this.handleAdd}
+        handleRemove={this.handleRemove}
+      />
     );
   }
 
   handleAdd (newUser) {
-
     const newUsers = [ ...this.state.users, newUser ];
-
     this.setState({
       users: newUsers
     });
@@ -62,6 +62,13 @@ class AppContainer extends Component {
 
     this.setState({
       editingUserId: '',
+      users: newUsers
+    });
+  }
+
+  handleRemove (userId) {
+    const newUsers = this.state.users.filter(user => user.id !== userId);
+    this.setState({
       users: newUsers
     });
   }

@@ -23,10 +23,12 @@ class AppContainer extends Component {
     });
 
     return (
-      <main className='main'>
+      <div>
         <Title>Lista de animales</Title>
-        { animals.length ? animals : <i>No hay animales.</i> }
-      </main>
+        <main className='row column'>
+          { animals.length ? animals : <i>No hay animales.</i> }
+        </main>
+      </div>
     );
   }
 }

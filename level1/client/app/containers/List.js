@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Row } from 'react-foundation';
+import Header from 'client/app/components/Header';
 import User from 'client/app/components/User';
 import UserEdit from 'client/app/components/UserEdit';
 
@@ -11,23 +12,21 @@ class ListContainer extends Component {
 
   render () {
 
-    const { users, handleAdd, handleEdition } = this.props;
+    const { users, handleAdd, handleEdition, handleRemove } = this.props;
     const usersElements = users.map(user => (
-      <User key={user.id} {...user} onEdit={handleEdition} />
+      <User key={user.id} {...user} onEdit={handleEdition} onRemove={handleRemove} />
     ));
 
     return (
       <div>
+        <Header>Usuarios ({users.length})</Header>
         <Row isColumn={true}>
-          <h1>Usuarios <small>({users.length})</small></h1>
+          {
+            usersElements.length
+            ? usersElements
+            : <p><i>No hay usuarios.</i></p>
+          }
         </Row>
-        {
-          usersElements.length ?
-          usersElements :
-          <Row isColumn={true}>
-            <p><i>No hay usuarios.</i></p>
-          </Row>
-        }
         <Row isColumn={true}>
           <p><b>Agregar usuario:</b></p>
         </Row>
@@ -43,6 +42,7 @@ ListContainer.propTypes = {
   users: PropTypes.arrayOf(PropTypes.object).isRequired,
   handleAdd: PropTypes.func.isRequired,
   handleEdition: PropTypes.func.isRequired,
+  handleRemove: PropTypes.func.isRequired,
 };
 
 export default ListContainer;

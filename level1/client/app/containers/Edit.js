@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Row } from 'react-foundation';
+import Header from 'client/app/components/Header';
 import UserEdit from 'client/app/components/UserEdit';
 
 class ListContainer extends Component {
@@ -15,11 +16,12 @@ class ListContainer extends Component {
 
     return (
       <div>
+        <Header>Edición</Header>
         <Row isColumn={true}>
-          <h1>Edición</h1>
-        </Row>
-        <Row isColumn={true}>
-          <UserEdit {...user} onChange={handleEdit} />
+          <UserEdit
+            {...user}
+            onChange={handleEdit}
+          />
         </Row>
       </div>
     );
