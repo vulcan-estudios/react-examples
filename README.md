@@ -6,6 +6,9 @@ Serie de ejemplos para aprender [React](http://facebook.github.io/react) y [Redu
 
 Entra al [espacio para prácticar](./play) para aprender.
 
+La serie de ejemplos de [redux-examples](https://github.com/vulcan-estudios/redux-examples)
+se recomenda tomar primero, debido a que en estos ejemplos se integra React con Redux.
+
 ## Levels
 
 ### Level 0: [Fundamentos](./level0)
